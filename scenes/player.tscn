@@ -313,13 +313,15 @@ animations = [{
 size = Vector2(10, 33)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_paesd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -28)
 sprite_frames = SubResource("SpriteFrames_bd6yx")
 animation = &"idle"
-frame_progress = 0.715363
+frame_progress = 0.2908
 offset = Vector2(2.48, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

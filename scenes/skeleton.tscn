@@ -1,11 +1,44 @@
-[gd_scene load_steps=18 format=3 uid="uid://c0nwg8xt6ehxk"]
+[gd_scene load_steps=27 format=3 uid="uid://c0nwg8xt6ehxk"]
 
 [ext_resource type="Script" path="res://scripts/skeleton.gd" id="1_ajqjq"]
 [ext_resource type="Texture2D" uid="uid://bfpvarv30fip4" path="res://assets/Legacy Fantasy - Castle Prison/Mob/Skeleton/Idle/Idle-Sheet.png" id="1_vvxlm"]
 [ext_resource type="Texture2D" uid="uid://m6euqx8po142" path="res://assets/Legacy Fantasy - Castle Prison/Mob/Skeleton/Walk/Walk-Sheet.png" id="2_e266w"]
+[ext_resource type="Texture2D" uid="uid://ct2bdlxn2s2ai" path="res://assets/Legacy Fantasy - Castle Prison/Mob/Skeleton/Death/Death-Sheet.png" id="2_r36wy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rqi6v"]
 size = Vector2(12, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nd5fg"]
+atlas = ExtResource("2_r36wy")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwocl"]
+atlas = ExtResource("2_r36wy")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybs2b"]
+atlas = ExtResource("2_r36wy")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayy4m"]
+atlas = ExtResource("2_r36wy")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpbl0"]
+atlas = ExtResource("2_r36wy")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h826r"]
+atlas = ExtResource("2_r36wy")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66khw"]
+atlas = ExtResource("2_r36wy")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhhoc"]
+atlas = ExtResource("2_r36wy")
+region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_phgqa"]
 atlas = ExtResource("1_vvxlm")
@@ -57,6 +90,35 @@ region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v4qy6"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nd5fg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwocl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybs2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ayy4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpbl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h826r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66khw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhhoc")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [],
 "loop": true,
 "name": &"default",
@@ -120,5 +182,6 @@ shape = SubResource("RectangleShape2D_rqi6v")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.12, 0)
 sprite_frames = SubResource("SpriteFrames_v4qy6")
-animation = &"walk"
-frame_progress = 0.502533
+animation = &"death"
+frame = 7
+frame_progress = 1.0

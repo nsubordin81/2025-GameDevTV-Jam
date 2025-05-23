@@ -13,3 +13,5 @@ position = Vector2(563, 542)
 
 [node name="Skeleton" parent="." instance=ExtResource("3_c5obq")]
 position = Vector2(513, 181)
+collision_layer = 4
+collision_mask = 3
