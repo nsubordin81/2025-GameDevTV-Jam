@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://c7mb1pa5qr55s"]
+[gd_scene load_steps=3 format=3 uid="uid://c7mb1pa5qr55s"]
+
+[ext_resource type="PackedScene" uid="uid://s2rwiyoypwi0" path="res://scenes/fantasy_tilemap.tscn" id="1_v33o7"]
+[ext_resource type="PackedScene" uid="uid://bndjqsj3nseuo" path="res://scenes/player.tscn" id="2_wfjow"]
 
 [node name="main" type="Node2D"]
+
+[node name="MainLevel" parent="." instance=ExtResource("1_v33o7")]
+
+[node name="Player" parent="." instance=ExtResource("2_wfjow")]
+position = Vector2(571, 582)
