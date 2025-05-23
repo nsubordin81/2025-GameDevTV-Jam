@@ -121,4 +121,4 @@ shape = SubResource("RectangleShape2D_rqi6v")
 position = Vector2(-0.12, 0)
 sprite_frames = SubResource("SpriteFrames_v4qy6")
 animation = &"walk"
-frame_progress = 0.724508
+frame_progress = 0.502533
