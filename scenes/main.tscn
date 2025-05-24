@@ -1,14 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7mb1pa5qr55s"]
+[gd_scene load_steps=6 format=3 uid="uid://c7mb1pa5qr55s"]
 
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_ayqri"]
 [ext_resource type="PackedScene" uid="uid://s2rwiyoypwi0" path="res://scenes/fantasy_tilemap.tscn" id="1_v33o7"]
 [ext_resource type="PackedScene" uid="uid://bndjqsj3nseuo" path="res://scenes/player.tscn" id="2_wfjow"]
 [ext_resource type="PackedScene" uid="uid://c0nwg8xt6ehxk" path="res://scenes/skeleton.tscn" id="3_c5obq"]
+[ext_resource type="PackedScene" uid="uid://cit7ls8emyuga" path="res://scenes/portal.tscn" id="5_focwt"]
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_ayqri")
 
 [node name="MainLevel" parent="." instance=ExtResource("1_v33o7")]
 
-[node name="Player" parent="." instance=ExtResource("2_wfjow")]
+[node name="Portal" parent="." instance=ExtResource("5_focwt")]
+position = Vector2(168, 505)
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("2_wfjow")]
 position = Vector2(563, 542)
 
 [node name="Skeleton" parent="." instance=ExtResource("3_c5obq")]
