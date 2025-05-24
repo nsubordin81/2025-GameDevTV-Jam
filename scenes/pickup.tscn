@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://dej328n7qa3mp"]
+
+[ext_resource type="Texture2D" uid="uid://det7q6yt20isw" path="res://assets/Legacy Fantasy - Blood Mansion/Assets/jars.png" id="1_3yj1l"]
+[ext_resource type="Script" path="res://scripts/pickup.gd" id="1_bin6a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nq3xr"]
+size = Vector2(20, 19.2105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bmyi"]
+atlas = ExtResource("1_3yj1l")
+region = Rect2(0, 385, 31, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jltpx"]
+atlas = ExtResource("1_3yj1l")
+region = Rect2(31, 385, 31, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62c6g"]
+atlas = ExtResource("1_3yj1l")
+region = Rect2(62, 385, 31, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mfdk"]
+atlas = ExtResource("1_3yj1l")
+region = Rect2(93, 385, 31, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f776w"]
+atlas = ExtResource("1_3yj1l")
+region = Rect2(124, 385, 31, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fb3c1"]
+atlas = ExtResource("1_3yj1l")
+region = Rect2(0, 385, 31, 47)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vyvt5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bmyi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jltpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62c6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mfdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f776w")
+}],
+"loop": false,
+"name": &"crack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fb3c1")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Pickup" type="StaticBody2D" groups=["pickups"]]
+collision_mask = 2
+script = ExtResource("1_bin6a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.899994)
+scale = Vector2(0.76, 2.28)
+shape = SubResource("RectangleShape2D_nq3xr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vyvt5")
+animation = &"idle"

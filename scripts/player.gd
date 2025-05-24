@@ -1,8 +1,6 @@
 class_name Player extends CharacterBody2D
 # this is important when we are trying to use the 'is' keyword for pattern matching
 
-signal hit
-signal die
 
 const SPEED = 300.0
 
@@ -53,6 +51,9 @@ func _physics_process(delta):
 		if collision.get_collider().name == SKELETON_NAME and not recovering:
 			print("collided with a skeleton!")
 			take_damage()
+		elif collision.get_collider().is_in_group("pickups"):
+			print("we hit one!!!")
+			collision.get_collider().combust()
 
 	update_animations(direction)
 
@@ -61,10 +62,8 @@ func jump(force: float):
 
 func dying():
 	print("you are dead")
-	die.emit()
 
 func take_damage():
-	hit.emit()
 	health = health - 5
 	print("your new health is ", health)
 	if health <= 0:

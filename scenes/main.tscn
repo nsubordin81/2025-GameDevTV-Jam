@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7mb1pa5qr55s"]
+[gd_scene load_steps=7 format=3 uid="uid://c7mb1pa5qr55s"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ayqri"]
 [ext_resource type="PackedScene" uid="uid://s2rwiyoypwi0" path="res://scenes/fantasy_tilemap.tscn" id="1_v33o7"]
 [ext_resource type="PackedScene" uid="uid://bndjqsj3nseuo" path="res://scenes/player.tscn" id="2_wfjow"]
 [ext_resource type="PackedScene" uid="uid://cit7ls8emyuga" path="res://scenes/portal.tscn" id="5_focwt"]
+[ext_resource type="PackedScene" uid="uid://dej328n7qa3mp" path="res://scenes/pickup.tscn" id="6_243rc"]
 [ext_resource type="PackedScene" uid="uid://878hvyefmkxl" path="res://scenes/skull_portal.tscn" id="6_n28us"]
 
 [node name="main" type="Node2D"]
@@ -19,3 +20,9 @@ position = Vector2(563, 542)
 
 [node name="SkullPortal" parent="." instance=ExtResource("6_n28us")]
 position = Vector2(557, 219)
+
+[node name="Pickup" parent="." instance=ExtResource("6_243rc")]
+position = Vector2(749, 514)
+
+[node name="Pickup2" parent="." instance=ExtResource("6_243rc")]
+position = Vector2(373, 514)
