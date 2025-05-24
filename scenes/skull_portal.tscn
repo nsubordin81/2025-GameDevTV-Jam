@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://878hvyefmkxl"]
+
+[ext_resource type="Texture2D" uid="uid://d0c1qbe3w0ijo" path="res://assets/Legacy Fantasy - Blood Mansion/Assets/doors.png" id="1_16l16"]
+[ext_resource type="Script" path="res://scripts/skull_portal.gd" id="1_gecjf"]
+[ext_resource type="Script" path="res://scripts/skeleton_spawn_position.gd" id="2_kk1ll"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3jkg"]
+size = Vector2(20, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ep5j3"]
+atlas = ExtResource("1_16l16")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuarp"]
+atlas = ExtResource("1_16l16")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_djekk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ep5j3")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iuarp")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[node name="SkullPortal" type="StaticBody2D"]
+collision_mask = 4
+script = ExtResource("1_gecjf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2.64, 0.200001)
+shape = SubResource("RectangleShape2D_g3jkg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4, -36)
+sprite_frames = SubResource("SpriteFrames_djekk")
+animation = &"open"
+
+[node name="SkeletonSpawnPosition" type="Marker2D" parent="."]
+position = Vector2(0, -30)
+script = ExtResource("2_kk1ll")

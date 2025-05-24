@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ayqri"]
 [ext_resource type="PackedScene" uid="uid://s2rwiyoypwi0" path="res://scenes/fantasy_tilemap.tscn" id="1_v33o7"]
 [ext_resource type="PackedScene" uid="uid://bndjqsj3nseuo" path="res://scenes/player.tscn" id="2_wfjow"]
-[ext_resource type="PackedScene" uid="uid://c0nwg8xt6ehxk" path="res://scenes/skeleton.tscn" id="3_c5obq"]
 [ext_resource type="PackedScene" uid="uid://cit7ls8emyuga" path="res://scenes/portal.tscn" id="5_focwt"]
+[ext_resource type="PackedScene" uid="uid://878hvyefmkxl" path="res://scenes/skull_portal.tscn" id="6_n28us"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_ayqri")
@@ -17,7 +17,5 @@ position = Vector2(168, 505)
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_wfjow")]
 position = Vector2(563, 542)
 
-[node name="Skeleton" parent="." instance=ExtResource("3_c5obq")]
-position = Vector2(513, 181)
-collision_layer = 4
-collision_mask = 3
+[node name="SkullPortal" parent="." instance=ExtResource("6_n28us")]
+position = Vector2(557, 219)
