@@ -26,3 +26,9 @@ position = Vector2(749, 514)
 
 [node name="Pickup2" parent="." instance=ExtResource("6_243rc")]
 position = Vector2(373, 514)
+
+[node name="Pickup3" parent="." instance=ExtResource("6_243rc")]
+position = Vector2(1061, 109)
+
+[node name="Pickup4" parent="." instance=ExtResource("6_243rc")]
+position = Vector2(84, 113)
