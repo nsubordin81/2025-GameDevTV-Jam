@@ -100,3 +100,6 @@ func update_animations(direction):
 			animated_sprite.play("walk")
 	else:
 		animated_sprite.play("jump")
+
+func set_active(value: bool) -> void:
+	active = value

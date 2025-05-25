@@ -19,6 +19,6 @@ func _on_exit_unlocked():
 	
 func _on_body_entered(body):
 	if body.is_in_group("player") and animated_sprite.animation == "open":
-		var main = get_node("/root/main")
+		var main = get_node(" / root / main")
 		body.set_active(false)
 		main.show_victory_dialog()

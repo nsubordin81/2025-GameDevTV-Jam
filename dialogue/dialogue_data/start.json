@@ -1,0 +1,38 @@
+{
+  "dialog_1": {
+    "name": "The Insufferably Charming Imprisoner",
+    "text": "Ah, hello there, adventurer. Yes, you—the one with the completely useless firearm. Welcome to my humble little death trap."
+  },
+  "dialog_2": {
+    "name": "The Insufferably Charming Imprisoner",
+    "text": "You've stumbled into my dungeon and the door has sealed behind you. Those four ominous pots with bleeding skull eyes? Cursed, obviously."
+  },
+  "dialog_3": {
+    "name": "The Insufferably Charming Imprisoner",
+    "text": "Break all four by running into them to lift the curse and open the exit door."
+  },
+  "dialog_4": {
+    "name": "The Insufferably Charming Imprisoner",
+    "text": "About your skeletal houseguests—they spawn every few seconds from that far door. Their touch hurts you terribly while leaving them completely unperturbed."
+  },
+  "dialog_5": {
+    "name": "The Insufferably Charming Imprisoner",
+    "text": "Fortunately, they spontaneously combust after a short while. Saves on cleanup, really."
+  },
+  "dialog_6": {
+    "name": "The Insufferably Charming Imprisoner",
+    "text": "That impressive weapon you're carrying? Completely ornamental, I'm afraid."
+  },
+  "dialog_7": {
+    "name": "The Insufferably Charming Imprisoner",
+    "text": "You'll have to rely on WASD or arrow keys to scamper about, and space bar for those charming little hops we call 'jumping.'"
+  },
+  "dialog_8": {
+    "name": "The Insufferably Charming Imprisoner",
+    "text": "So: Break four bleeding pots, avoid continuously spawning combustible undead, escape through the unsealed door. Try not to die."
+  },
+  "dialog_9": {
+    "name": "The Insufferably Charming Imprisoner",
+    "text": "Best of luck. Do try to make it interesting—I get so dreadfully bored down here."
+  }
+}

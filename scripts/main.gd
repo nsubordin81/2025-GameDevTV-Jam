@@ -3,10 +3,14 @@ extends Node2D
 @onready var portal = $Portal
 @onready var skull_portal = $SkullPortal
 @onready var interface = $Interface
+@onready var dialog_player = $DialoguePlayer
 
 @export var win_state = 4
 
 signal unlocked
+
+const START_DIALOGUE = "res://dialogue/dialogue_data/start.json"
+const VICTORY_DIALOGUE = "res://dialogue/dialogue_data/victory.json"
 
 var pots_busted = 0
 var player = null
@@ -39,14 +43,16 @@ func _ready() -> void:
 	show_intro_dialog()
 
 func show_intro_dialog():
+	dialog_player.dialogue_file = START_DIALOGUE
+	interface.show_dialogue(player, dialog_player)
 	var dialog = interface.dialogue_node
 	dialog.dialogue_finished.connect(_on_intro_dialog_finished)
-	interface.show_dialogue(player, dialog)
+	
 
 func _on_intro_dialog_finished():
 	# Enable player movement and start skeleton spawning
-	player.set_active(true)
 	skeleton_timer.start()
+	player.set_active(true)
 
 func _spawn_skeleton() -> void:
 	var new_skeleton = skeleton.instantiate()
@@ -65,6 +71,5 @@ func _on_pot_busted(pot_id):
 		already_hit.append(pot_id)
 
 func show_victory_dialog():
-	var dialog = interface.dialogue_node
-	dialog.dialogue_text = "You've escaped!"
-	interface.show_dialogue(player, dialog)
+	dialog_player.dialogue_file = VICTORY_DIALOGUE
+	interface.show_dialogue(player, dialog_player)
