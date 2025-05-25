@@ -47,3 +47,12 @@ shape = SubResource("RectangleShape2D_40bxp")
 
 [node name="SpawnPosition" type="Marker2D" parent="."]
 position = Vector2(0, -30)
+
+[node name="ExitArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea"]
+shape = SubResource("RectangleShape2D_40bxp")
+
+[connection signal="body_entered" from="ExitArea" to="." method="_on_body_entered"]

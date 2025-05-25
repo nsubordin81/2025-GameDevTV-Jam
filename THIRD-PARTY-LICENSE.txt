@@ -1,4 +1,4 @@
-The dialog code for this game is built off-of the Godot example code, which is covered 
+The dialog code and dialog theme for this game is built off-of or if I didn't get to it just verbatim copied from the Godot example code, which is covered 
 under the following license:
 
 Copyright (c) 2014-present Godot Engine contributors. \
