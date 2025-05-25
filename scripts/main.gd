@@ -2,17 +2,25 @@ extends Node2D
 
 @onready var portal = $Portal
 @onready var skull_portal = $SkullPortal
-@onready var exit = $Exit
+# @onready var exit = $Exit
 
 @export var win_state = 4
 
+signal unlocked
+
 var pots_busted = 0
 var player = null
+var pots = null
 var skeleton = preload("res://scenes/skeleton.tscn")
+var already_hit = []
 
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
+	pots = get_tree().get_nodes_in_group("pickups")
+
+	for pot in pots:
+		pot.hit.connect(_on_pot_busted)
 	
 	if player != null:
 		player.global_position = portal.get_spawn_pos()
@@ -30,11 +38,13 @@ func _spawn_skeleton() -> void:
 	new_skeleton.global_position = skull_portal.get_skeleton_spawn_pos()
 	add_child(new_skeleton)
 
-func win():
-	print("you've won the game")
+func unlock_exit():
+	unlocked.emit()
 
-func _on_pot_busted():
-	pots_busted += 1
-	print("another pot bites the dust")
-	if pots_busted >= win_state:
-		win()
+func _on_pot_busted(pot_id):
+	if pot_id not in already_hit:
+		pots_busted += 1
+		print("another pot bites the dust")
+		if pots_busted >= win_state:
+			unlock_exit()
+		already_hit.append(pot_id)

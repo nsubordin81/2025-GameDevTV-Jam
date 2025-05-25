@@ -1,6 +1,8 @@
 extends StaticBody2D
 
-signal hit
+@export var pot_id = 0
+
+signal hit(pot_id)
 
 @onready var animated_sprite = $AnimatedSprite2D
 
@@ -14,5 +16,5 @@ func _on_animation_finished():
 		queue_free()
 
 func combust():
-	hit.emit()
+	hit.emit(get_instance_id())
 	animated_sprite.play("crack")

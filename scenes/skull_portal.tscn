@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://878hvyefmkxl"]
+[gd_scene load_steps=7 format=3 uid="uid://878hvyefmkxl"]
 
 [ext_resource type="Texture2D" uid="uid://d0c1qbe3w0ijo" path="res://assets/Legacy Fantasy - Blood Mansion/Assets/doors.png" id="1_16l16"]
 [ext_resource type="Script" path="res://scripts/skull_portal.gd" id="1_gecjf"]
-[ext_resource type="Script" path="res://scripts/skeleton_spawn_position.gd" id="2_kk1ll"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3jkg"]
 size = Vector2(20, 1)
@@ -49,4 +48,3 @@ animation = &"open"
 
 [node name="SkeletonSpawnPosition" type="Marker2D" parent="."]
 position = Vector2(0, -30)
-script = ExtResource("2_kk1ll")

@@ -15,6 +15,7 @@ const SKELETON_NAME = "Skeleton"
 var recovering = false
 
 var active = true
+var recoil = Vector2(-200, 0) # Adjust the recoil vector as needed
 
 func _physics_process(delta):
 	# only need gravity if they are jumping or falling
@@ -44,6 +45,8 @@ func _physics_process(delta):
 	# this is twhat actually moves the CharacterBody2D
 	move_and_slide()
 
+	var hit_a_pot = null
+
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		# print(collision.get_collider().name)
@@ -53,7 +56,12 @@ func _physics_process(delta):
 			take_damage()
 		elif collision.get_collider().is_in_group("pickups"):
 			print("we hit one!!!")
-			collision.get_collider().combust()
+			hit_a_pot = collision.get_collider()
+	
+	if hit_a_pot:
+		hit_a_pot.combust()
+		hit_a_pot = null
+		
 
 	update_animations(direction)
 
@@ -64,6 +72,7 @@ func dying():
 	print("you are dead")
 
 func take_damage():
+	velocity += recoil
 	health = health - 5
 	print("your new health is ", health)
 	if health <= 0:
