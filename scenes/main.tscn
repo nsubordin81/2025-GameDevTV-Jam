@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=4 uid="uid://c7mb1pa5qr55s"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_ayqri"]
+[ext_resource type="Script" uid="uid://dfa2pn0lxdswq" path="res://scripts/main.gd" id="1_ayqri"]
 [ext_resource type="PackedScene" uid="uid://s2rwiyoypwi0" path="res://scenes/fantasy_tilemap.tscn" id="1_v33o7"]
 [ext_resource type="Texture2D" uid="uid://cdb518m8fhf3y" path="res://assets/Legacy Fantasy - Blood Mansion/Assets/Tiles.png" id="2_a1n77"]
 [ext_resource type="PackedScene" uid="uid://nb2wowyl2vi0" path="res://dialogue/interface/interface.tscn" id="2_l546h"]

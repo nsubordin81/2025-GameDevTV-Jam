@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://c0nwg8xt6ehxk"]
 
-[ext_resource type="Script" path="res://scripts/skeleton.gd" id="1_ajqjq"]
+[ext_resource type="Script" uid="uid://dk6evag5wdkdx" path="res://scripts/skeleton.gd" id="1_ajqjq"]
 [ext_resource type="Texture2D" uid="uid://bfpvarv30fip4" path="res://assets/Legacy Fantasy - Castle Prison/Mob/Skeleton/Idle/Idle-Sheet.png" id="1_vvxlm"]
 [ext_resource type="Texture2D" uid="uid://m6euqx8po142" path="res://assets/Legacy Fantasy - Castle Prison/Mob/Skeleton/Walk/Walk-Sheet.png" id="2_e266w"]
 [ext_resource type="Texture2D" uid="uid://ct2bdlxn2s2ai" path="res://assets/Legacy Fantasy - Castle Prison/Mob/Skeleton/Death/Death-Sheet.png" id="2_r36wy"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://878hvyefmkxl"]
 
 [ext_resource type="Texture2D" uid="uid://d0c1qbe3w0ijo" path="res://assets/Legacy Fantasy - Blood Mansion/Assets/doors.png" id="1_16l16"]
-[ext_resource type="Script" path="res://scripts/skull_portal.gd" id="1_gecjf"]
+[ext_resource type="Script" uid="uid://sd4l6kbo5pw5" path="res://scripts/skull_portal.gd" id="1_gecjf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3jkg"]
 size = Vector2(20, 1)

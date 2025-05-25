@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bn48rcupxi30n"]
 
-[ext_resource type="Script" path="res://scripts/exit.gd" id="1_wo6ph"]
+[ext_resource type="Script" uid="uid://c6d5qlwtgjwh6" path="res://scripts/exit.gd" id="1_wo6ph"]
 [ext_resource type="Texture2D" uid="uid://d0c1qbe3w0ijo" path="res://assets/Legacy Fantasy - Blood Mansion/Assets/doors.png" id="2_oumla"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hyuh3"]

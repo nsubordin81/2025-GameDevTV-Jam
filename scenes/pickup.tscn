@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dej328n7qa3mp"]
 
 [ext_resource type="Texture2D" uid="uid://det7q6yt20isw" path="res://assets/Legacy Fantasy - Blood Mansion/Assets/jars.png" id="1_3yj1l"]
-[ext_resource type="Script" path="res://scripts/pickup.gd" id="1_bin6a"]
+[ext_resource type="Script" uid="uid://ci0su34ov7arn" path="res://scripts/pickup.gd" id="1_bin6a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nq3xr"]
 size = Vector2(20, 19.2105)
