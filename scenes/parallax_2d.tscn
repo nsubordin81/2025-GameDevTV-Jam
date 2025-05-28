@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cktsjrnb4tgaq"]
+
+[ext_resource type="Texture2D" uid="uid://5fjxcj1yrpu" path="res://assets/Legacy Fantasy - Blood Mansion/Assets/Background.png" id="1_8sr37"]
+
+[node name="Parallax2D" type="Parallax2D"]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(1152, 1632)
+repeat_times = 11
+
+[node name="LevelBG" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(1158, 1632)
+scale = Vector2(2, 2)
+texture = ExtResource("1_8sr37")
+region_enabled = true
+region_rect = Rect2(0, 0, 1152, 1632)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dej328n7qa3mp"]
+[gd_scene load_steps=12 format=3 uid="uid://dej328n7qa3mp"]
 
 [ext_resource type="Texture2D" uid="uid://det7q6yt20isw" path="res://assets/Legacy Fantasy - Blood Mansion/Assets/jars.png" id="1_3yj1l"]
 [ext_resource type="Script" uid="uid://ci0su34ov7arn" path="res://scripts/pickup.gd" id="1_bin6a"]
@@ -61,8 +61,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7cqbe"]
+radius = 18.0
+height = 48.0
+
 [node name="Pickup" type="StaticBody2D" groups=["pickups"]]
-collision_mask = 2
 script = ExtResource("1_bin6a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -73,3 +76,11 @@ shape = SubResource("RectangleShape2D_nq3xr")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vyvt5")
 animation = &"idle"
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CapsuleShape2D_7cqbe")
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]

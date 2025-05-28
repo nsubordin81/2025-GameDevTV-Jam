@@ -5,11 +5,15 @@
   },
   "dialog_2": {
     "name": "The Insufferably Charming Imprisoner",
-    "text": "You've stumbled into my dungeon and the door has sealed behind you. Those four ominous pots with bleeding skull eyes? Cursed, obviously."
+    "text": "You've stumbled into my dungeon and the door has sealed behind you. See that red door? The conspicuously closed one."
   },
-  "dialog_3": {
+  "dialog_2a": {
     "name": "The Insufferably Charming Imprisoner",
-    "text": "Break all four by running into them to lift the curse and open the exit door."
+    "text": "That's your exit—currently sealed by curse, naturally. Those four ominous pots with bleeding skull eyes?"
+  },
+  "dialog_2b": {
+    "name": "The Insufferably Charming Imprisoner",
+    "text": "Break all four by running into them to lift the curse and open your lovely red escape route."
   },
   "dialog_4": {
     "name": "The Insufferably Charming Imprisoner",

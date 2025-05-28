@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://da1knancf2dxy"]
+
+[ext_resource type="Script" uid="uid://bwwv7skkm37kr" path="res://scripts/health_bar.gd" id="1_1bvlm"]
+[ext_resource type="Theme" uid="uid://dtao6d0ebglcf" path="res://theme/theme.tres" id="2_y3kqx"]
+
+[node name="HealthBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_1bvlm")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 16.0
+offset_right = 486.0
+offset_bottom = 78.0
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 26.0
+offset_right = 474.0
+offset_bottom = 66.0
+scale = Vector2(1.01167, 1)
+theme = ExtResource("2_y3kqx")
+value = 100.0
+metadata/MinValue = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 27.0
+offset_right = 241.0
+offset_bottom = 68.0
+theme = ExtResource("2_y3kqx")
+text = "Player Health"
+fit_content = true
+vertical_alignment = 1

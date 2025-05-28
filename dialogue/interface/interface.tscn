@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://nb2wowyl2vi0"]
+[gd_scene load_steps=4 format=3 uid="uid://nb2wowyl2vi0"]
 
 [ext_resource type="Theme" uid="uid://dtao6d0ebglcf" path="res://theme/theme.tres" id="1"]
 [ext_resource type="Script" uid="uid://bve0terp5lnxv" path="res://dialogue/interface/interface.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://da1knancf2dxy" path="res://scenes/health_bar.tscn" id="3_bh2le"]
 
 [node name="Dialogue" type="Panel"]
 offset_left = -18.0
@@ -13,51 +14,60 @@ theme = ExtResource("1")
 script = ExtResource("2")
 
 [node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 20.0
-offset_top = -60.0
-offset_right = 312.698
-offset_bottom = 82.95
+offset_left = 41.3043
+offset_top = 38.0
+offset_right = 925.304
+offset_bottom = 212.0
 scale = Vector2(1.37, 0.85)
 theme = ExtResource("1")
 theme_type_variation = &"title_panel"
 
 [node name="Panel2" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 130.0
-offset_right = 1260.0
-offset_bottom = 306.0
+offset_left = 36.9565
+offset_top = 111.0
+offset_right = 1250.96
+offset_bottom = 344.0
+theme = ExtResource("1")
 
 [node name="Name" type="RichTextLabel" parent="."]
 clip_contents = false
-layout_mode = 0
-offset_left = 98.913
-offset_top = -49.0
-offset_right = 322.913
-offset_bottom = -9.0
+offset_left = 73.913
+offset_top = 53.0
+offset_right = 981.913
+offset_bottom = 94.0
+scale = Vector2(1.20134, 1.34091)
+theme = ExtResource("1")
 theme_override_colors/default_color = Color(0.0745098, 0.27451, 0.368627, 1)
 theme_override_colors/font_shadow_color = Color(0.184314, 0.419608, 0.533333, 0.356863)
 theme_override_constants/shadow_offset_y = 2
 theme_override_constants/shadow_offset_x = 1
 bbcode_enabled = true
 text = "NAME"
+fit_content = true
 scroll_active = false
 
 [node name="Text" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 126.0
-offset_top = 176.0
-offset_right = 1026.0
-offset_bottom = 236.0
+offset_left = 71.7391
+offset_top = 133.0
+offset_right = 971.739
+offset_bottom = 193.0
+scale = Vector2(1.21739, 1.44)
+theme = ExtResource("1")
 text = "Dialogue Text"
+fit_content = true
 
 [node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1008.0
-offset_top = -61.0
-offset_right = 1168.0
-offset_bottom = 67.0
+offset_left = 555.435
+offset_top = 344.0
+offset_right = 697.435
+offset_bottom = 472.0
+theme = ExtResource("1")
 text = "Next"
+
+[node name="HealthBar" parent="." instance=ExtResource("3_bh2le")]
+offset_left = 21.7391
+offset_top = -181.0
+offset_right = 21.7391
+offset_bottom = -181.0
 
 [connection signal="button_up" from="Button" to="." method="_on_Button_button_up"]

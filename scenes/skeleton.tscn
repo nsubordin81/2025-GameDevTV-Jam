@@ -1,12 +1,13 @@
-[gd_scene load_steps=27 format=3 uid="uid://c0nwg8xt6ehxk"]
+[gd_scene load_steps=37 format=3 uid="uid://c0nwg8xt6ehxk"]
 
 [ext_resource type="Script" uid="uid://dk6evag5wdkdx" path="res://scripts/skeleton.gd" id="1_ajqjq"]
 [ext_resource type="Texture2D" uid="uid://bfpvarv30fip4" path="res://assets/Legacy Fantasy - Castle Prison/Mob/Skeleton/Idle/Idle-Sheet.png" id="1_vvxlm"]
 [ext_resource type="Texture2D" uid="uid://m6euqx8po142" path="res://assets/Legacy Fantasy - Castle Prison/Mob/Skeleton/Walk/Walk-Sheet.png" id="2_e266w"]
 [ext_resource type="Texture2D" uid="uid://ct2bdlxn2s2ai" path="res://assets/Legacy Fantasy - Castle Prison/Mob/Skeleton/Death/Death-Sheet.png" id="2_r36wy"]
+[ext_resource type="Texture2D" uid="uid://damppvff0oatk" path="res://assets/Legacy Fantasy - Castle Prison/Mob/Skeleton/Attack/Attack-Sheet.png" id="4_5pgwy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rqi6v"]
-size = Vector2(12, 41)
+size = Vector2(12, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nd5fg"]
 atlas = ExtResource("2_r36wy")
@@ -55,6 +56,38 @@ region = Rect2(64, 0, 32, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_rx81c"]
 atlas = ExtResource("1_vvxlm")
 region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssl1b"]
+atlas = ExtResource("4_5pgwy")
+region = Rect2(672, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4hcs"]
+atlas = ExtResource("4_5pgwy")
+region = Rect2(576, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_haw2w"]
+atlas = ExtResource("4_5pgwy")
+region = Rect2(480, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0f3v"]
+atlas = ExtResource("4_5pgwy")
+region = Rect2(384, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrus2"]
+atlas = ExtResource("4_5pgwy")
+region = Rect2(288, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7e1v2"]
+atlas = ExtResource("4_5pgwy")
+region = Rect2(192, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjsi3"]
+atlas = ExtResource("4_5pgwy")
+region = Rect2(96, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nhjk"]
+atlas = ExtResource("4_5pgwy")
+region = Rect2(0, 0, 96, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o58l2"]
 atlas = ExtResource("2_e266w")
@@ -143,6 +176,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ssl1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4hcs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_haw2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0f3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrus2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7e1v2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjsi3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nhjk")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_o58l2")
 }, {
 "duration": 1.0,
@@ -171,17 +233,31 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bnirc"]
+radius = 8.0
+height = 38.0
+
 [node name="Skeleton" type="CharacterBody2D"]
 position = Vector2(0, -31)
+collision_layer = 4
 script = ExtResource("1_ajqjq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 10.5)
+position = Vector2(-1, 14)
 shape = SubResource("RectangleShape2D_rqi6v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-0.12, 0)
+position = Vector2(-1, 8)
 sprite_frames = SubResource("SpriteFrames_v4qy6")
-animation = &"death"
-frame = 7
-frame_progress = 1.0
+animation = &"jump"
+frame_progress = 0.0449114
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-1, 8)
+shape = SubResource("CapsuleShape2D_bnirc")
+
+[connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]

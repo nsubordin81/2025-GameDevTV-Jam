@@ -6,7 +6,7 @@ func _ready() -> void:
 	visible = false
 
 
-func show_dialogue(player: Player, dialogue: Node) -> void:
+func show_dialogue(player: PlayerCharacter, dialogue: Node) -> void:
 	visible = true
 	$Button.grab_focus()
 	dialogue_node = dialogue
@@ -33,7 +33,7 @@ func _on_Button_button_up() -> void:
 	$Text.text = dialogue_node.dialogue_text
 
 
-func _on_dialogue_finished(player: Player) -> void:
+func _on_dialogue_finished(player: PlayerCharacter) -> void:
 	dialogue_node.dialogue_started.disconnect(player.set_active)
 	dialogue_node.dialogue_finished.disconnect(player.set_active)
 	dialogue_node.dialogue_finished.disconnect(hide)
