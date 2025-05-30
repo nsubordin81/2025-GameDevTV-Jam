@@ -48,4 +48,4 @@ sprite_frames = SubResource("SpriteFrames_djekk")
 animation = &"open"
 
 [node name="SkeletonSpawnPosition" type="Marker2D" parent="."]
-position = Vector2(0, -30)
+position = Vector2(0, -31)

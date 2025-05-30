@@ -3136,7 +3136,6 @@ scale = Vector2(3.28905, 3.28905)
 script = ExtResource("1_ayqri")
 
 [node name="Parallax2D" parent="." instance=ExtResource("3_eb6dy")]
-scroll_scale = Vector2(0.1, 0.1)
 
 [node name="fog of war" type="TileMapLayer" parent="."]
 position = Vector2(16.4181, 168.438)

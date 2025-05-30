@@ -72,8 +72,11 @@ func _spawn_skeleton() -> void:
 	print("Spawn position: ", spawn_pos)
 	
 	var new_skeleton = skeleton.instantiate()
+	# Add the skeleton to the same parent as the skull portal 
+	# to maintain the correct coordinate system
+	skull_portal.get_parent().add_child(new_skeleton)
+	# Use global_position to ensure proper world positioning
 	new_skeleton.global_position = spawn_pos
-	add_child(new_skeleton)
 	print("Skeleton spawned at: ", new_skeleton.global_position)
 
 func unlock_exit():
